@@ -12,7 +12,7 @@
 
 > This project will be mainly written in JavaScript. With a very simple UI, it allows the users to select the sorting algorithm, select the array size, and speed of the visualization.
 
-> The work on the project is still ongoing..
+> The work on the project is still ongoing...
 
 ## Install
 
