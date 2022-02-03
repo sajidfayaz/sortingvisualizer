@@ -1,43 +1,49 @@
-// Generate Random Color function
 function generateRandomColor() {
+<<<<<<< HEAD
     let letters = '0123456789ABCDEF';
     let color = '#';
     for (let i = 0; i < 6; i++) {
+=======
+   let letters = '0123456789ABCDEF';
+   let color = '#';
+   for (var i = 0; i < 6; i++) {
+>>>>>>> 5dc4f115923bbade50d1a5751278fce2dd02792c
       color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+   }
+   return color;
 }
 
-// Declare the array where random numbers are gonna be saved
 const arr = [];
 
 // Generate random numbers and push them into the array
-for(let i=0; i<100; i++) {
-    randNumber = Math.floor(Math.random() * 56);
-    randColor = generateRandomColor();
-    arr.push({
-        y: randNumber,
-        color: randColor,
-        label: randNumber
-    });
+for (let i = 0; i < 100; i++) {
+   let randNumber = Math.floor(Math.random() * 56);
+   let randColor = generateRandomColor();
+   arr.push({
+      y: randNumber,
+      color: randColor,
+      label: randNumber,
+   });
 }
 
 // Select chart in the DOM and set different properties
-const chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    theme: "light2",
-    title: {
-        text: "Sorting Visualizer"
-    },
-    data: [{
-        type: "column",
-        dataPoints: arr
-    }]
+const chart = new CanvasJS.Chart('chartContainer', {
+   animationEnabled: true,
+   theme: 'light2',
+   title: {
+      text: 'Sorting Visualizer',
+   },
+   data: [
+      {
+         type: 'column',
+         dataPoints: arr,
+      },
+   ],
 });
 
-// Render chart
 chart.render();
 
+<<<<<<< HEAD
 let bubbleSort = () => {
     let data = chart.options.data[0].dataPoints;
     let length = data.length;
@@ -68,3 +74,6 @@ let bubbleSort = () => {
 }
 
 bubbleSort();
+=======
+bubbleSort(chart);
+>>>>>>> 5dc4f115923bbade50d1a5751278fce2dd02792c
