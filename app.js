@@ -1,8 +1,8 @@
 // Generate Random Color function
 function generateRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
@@ -55,6 +55,7 @@ let bubbleSort = () => {
                 let temp = data[j].y;
                 data[j].y = data[j+1].y;
                 data[j+1].y = temp;
+                data[j].x = undefined;
                 chart.options.data[0].dataPoints = data;
                 chart.render();
             }
