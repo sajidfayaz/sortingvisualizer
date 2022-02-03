@@ -24,5 +24,3 @@ function bubbleSort(chart) {
       }
    })();
 }
-
-export default bubbleSort;

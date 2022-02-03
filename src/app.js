@@ -1,8 +1,6 @@
-import bubbleSort from './bubbleSort.js';
-
 function generateRandomColor() {
-   var letters = '0123456789ABCDEF';
-   var color = '#';
+   let letters = '0123456789ABCDEF';
+   let color = '#';
    for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
    }
@@ -13,8 +11,8 @@ const arr = [];
 
 // Generate random numbers and push them into the array
 for (let i = 0; i < 100; i++) {
-   randNumber = Math.floor(Math.random() * 56);
-   randColor = generateRandomColor();
+   let randNumber = Math.floor(Math.random() * 56);
+   let randColor = generateRandomColor();
    arr.push({
       y: randNumber,
       color: randColor,
