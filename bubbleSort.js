@@ -2,6 +2,14 @@ let swap = (arr, a, b) => {
    let temp = arr[a].y;
    arr[a].y = arr[b].y;
    arr[b].y = temp;
+
+   tempColor = arr[a].color;
+   arr[a].color = arr[b].color;
+   arr[b].color = tempColor;
+
+   tempLabel = arr[a].label;
+   arr[a].label = arr[b].label;
+   arr[b].label = temp;
 }
 
 let bubbleSort = (chart) => {
