@@ -21,8 +21,9 @@ let selectionSort = (chart) => {
 
     (function sortElements() {
         if(j >= length) {
-            j=i+1;
             i++;
+            j=i+1;
+            
         }
 
         if(i<length - 1) {
