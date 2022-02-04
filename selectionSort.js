@@ -2,6 +2,10 @@ let swap = (arr, a, b) => {
     temp = arr[a].y;
     arr[a].y = arr[b].y;
     arr[b].y = temp;
+
+    tempColor = arr[a].color;
+    arr[a].color = arr[b].color;
+    arr[b].color = tempColor;
 }
 
 let selectionSort = (chart) => {

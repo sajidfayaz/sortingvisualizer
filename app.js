@@ -16,7 +16,7 @@ for (let i = 0; i < 100; i++) {
    arr.push({
       y: randNumber,
       color: randColor,
-      label: randNumber,
+      label: randNumber
    });
 }
 
