@@ -38,4 +38,4 @@ const chart = new CanvasJS.Chart('chartContainer', {
 // Render chart
 chart.render();
 
-bubbleSort(chart);
+selectionSort(chart);
