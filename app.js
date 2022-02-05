@@ -33,6 +33,15 @@ const chart = new CanvasJS.Chart('chartContainer', {
          dataPoints: arr,
       },
    ],
+   axisX:{
+      lineThickness: 0,
+     tickThickness: 0
+   },
+   axisY:{
+      lineThickness: 0,
+     gridThickness: 0,
+     tickLength: 0
+   }
 });
 
 // Render chart
