@@ -1,42 +1,14 @@
-let swap = (arr, a, b) => {
-    temp = arr[a].y;
-    arr[a].y = arr[b].y;
-    arr[b].y = temp;
-
-    tempColor = arr[a].color;
-    arr[a].color = arr[b].color;
-    arr[b].color = tempColor;
-
-    tempLabel = arr[a].label;
-    arr[a].label = arr[b].label;
-    arr[b].label = temp;
-}
-
-let selectionSort = (chart) => {
-    let data = chart.options.data[0].dataPoints;
-    let length = data.length;
-    let i=0;
-    let j=1;
-    let minIdx;
-
-    (function sortElements() {
-        if(j >= length) {
-            i++;
-            j=i+1;
-            
+let selectionSort = async (arr, states) => {
+    for(let i=0; i<arr.length - 1; i++) {
+        let minIdx = i;
+        for(let j=i+1; j<arr.length; j++) {
+            if(arr[j] < arr[minIdx])
+                minIdx = j;
         }
-
-        if(i<length - 1) {
-            minIdx = i;
-            if(data[j].y < data[minIdx].y) {
-                swap(data, j, i);
-                chart.options.data[0].dataPoints = data;
-                chart.render();
-            }
-            j++;
-            setTimeout(() => {
-                sortElements();
-            }, 1);
-        }
-    })();
+        
+        await swap(arr, minIdx, i);
+        states[minIdx] = 0;
+        states[i] = 0;
+        states[i-1] = 1;
+    }
 }
