@@ -18,7 +18,8 @@ function setup() {
     }
     //bubbleSort(arr, states);
     //selectionSort(arr, states);
-    insertionSort(arr, states);
+    //insertionSort(arr, states);
+    quickSort(arr, states, 0, arr.length-1);
 }
 
 //p5js draw() method
@@ -31,11 +32,13 @@ function draw() {
             states[i] = -1;
         } else if(states[i] == 1) {
             fill(0, 255, 0);
+        } else if(states[i] == 2) {
+           fill("orange")
         } else {
             fill(255);
         }
         
-        rect(i * 10+20, height - arr[i] , 10, arr[i]);
+        rect(i * 10 + 20, height - arr[i] , 10, arr[i]);
         // stroke(255);
         // line(i, height, i, height - arr[i]);
         
@@ -44,7 +47,7 @@ function draw() {
 
 // common swap function
 let swap = async (arr, a, b) => {
-   await sleep(10);
+   await sleep(90);
    let temp = arr[a];
    arr[a] = arr[b];
    arr[b] = temp;
