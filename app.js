@@ -4,6 +4,7 @@ let arr = [];
 // create states to keep track of indexes being swapped and sorted indexes
 let states = [];
 
+//p5js setup() method
 function setup() {
     let canv = createCanvas(800, 500);
     console.log(canv);
@@ -19,6 +20,7 @@ function setup() {
     selectionSort(arr, states);
 }
 
+//p5js draw() method
 function draw() {
     background(0);
     for(let i=0; i<arr.length - 2; i++) {
@@ -32,9 +34,22 @@ function draw() {
             fill(255);
         }
         
-        rect(i * 10 + 20, height - arr[i] , 10, arr[i]);
+        rect(i * 10+20, height - arr[i] , 10, arr[i]);
         // stroke(255);
         // line(i, height, i, height - arr[i]);
         
     }
+}
+
+// common swap function
+let swap = async (arr, a, b) => {
+   await sleep(100);
+   let temp = arr[a];
+   arr[a] = arr[b];
+   arr[b] = temp;
+}
+
+// common sleep function to add delay in animations
+let sleep =  (ms) => {
+   return new Promise(resolve => setTimeout(resolve, ms));
 }

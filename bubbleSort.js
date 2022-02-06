@@ -10,14 +10,3 @@ let bubbleSort = async (arr, states) => {
        }
    }
 }
-
-let swap = async (arr, a, b) => {
-   await sleep(100);
-   let temp = arr[a];
-   arr[a] = arr[b];
-   arr[b] = temp;
-}
-
-let sleep =  (ms) => {
-   return new Promise(resolve => setTimeout(resolve, ms));
-}
