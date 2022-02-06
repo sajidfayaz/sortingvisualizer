@@ -1,50 +1,40 @@
-function generateRandomColor() {
-   let letters = '0123456789ABCDEF';
-   let color = '#';
-   for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-   }
-   return color;
+// crete an array to store values
+let arr = [];
+
+// create states to keep track of indexes being swapped and sorted indexes
+let states = [];
+
+function setup() {
+    let canv = createCanvas(800, 500);
+    console.log(canv);
+    // place canvas inside a div
+    canv.parent("canvasContainer");
+    
+    arr = new Array(floor(width/10));
+    for(let i=0; i<arr.length - 2; i++) {
+        arr[i] = random(height) + 1;
+        states[i] = -1;
+    }
+    //bubbleSort(arr, states);
+    selectionSort(arr, states);
 }
 
-const arr = [];
-
-// Generate random numbers and push them into the array
-for (let i = 0; i < 100; i++) {
-   let randNumber = Math.floor(Math.random() * 56);
-   let randColor = generateRandomColor();
-   arr.push({
-      y: randNumber,
-      color: randColor,
-      label: randNumber
-   });
+function draw() {
+    background(0);
+    for(let i=0; i<arr.length - 2; i++) {
+        if(states[i] == 0) {
+            //fill('#E0777D');
+            fill(0, 0, 255);
+            states[i] = -1;
+        } else if(states[i] == 1) {
+            fill(0, 255, 0);
+        } else {
+            fill(255);
+        }
+        
+        rect(i * 10 + 20, height - arr[i] , 10, arr[i]);
+        // stroke(255);
+        // line(i, height, i, height - arr[i]);
+        
+    }
 }
-
-// Select chart in the DOM and set different properties
-const chart = new CanvasJS.Chart('chartContainer', {
-   animationEnabled: true,
-   theme: 'light2',
-   title: {
-      text: 'Sorting Visualizer',
-   },
-   data: [
-      {
-         type: 'column',
-         dataPoints: arr,
-      },
-   ],
-   axisX:{
-      lineThickness: 0,
-     tickThickness: 0
-   },
-   axisY:{
-      lineThickness: 0,
-     gridThickness: 0,
-     tickLength: 0
-   }
-});
-
-// Render chart
-chart.render();
-
-selectionSort(chart);
