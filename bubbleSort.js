@@ -1,38 +1,23 @@
-let swap = (arr, a, b) => {
-   let temp = arr[a].y;
-   arr[a].y = arr[b].y;
-   arr[b].y = temp;
-
-   tempColor = arr[a].color;
-   arr[a].color = arr[b].color;
-   arr[b].color = tempColor;
-
-   tempLabel = arr[a].label;
-   arr[a].label = arr[b].label;
-   arr[b].label = temp;
+let bubbleSort = async (arr, states) => {
+   for(let i=0; i<arr.length; i++) {
+       for(let j=0; j<arr.length - i - 1; j++) {
+           if(arr[j] > arr[j+1]) {
+               await swap(arr, j, j+1);
+               states[j] = 0;
+               states[j+1] = 0;
+           }
+           states[arr.length - i - 2] = 1;
+       }
+   }
 }
 
-let bubbleSort = (chart) => {
-   let data = chart.options.data[0].dataPoints;
-   let length = data.length;
-   let i = 0;
-   let j = 0;
-   (function sortElements() {
-      if (j >= length - i - 1) {
-         j = 0;
-         i++;
-      }
+let swap = async (arr, a, b) => {
+   await sleep(100);
+   let temp = arr[a];
+   arr[a] = arr[b];
+   arr[b] = temp;
+}
 
-      if (i < length) {
-         if (data[j].y > data[j + 1].y) {
-            swap(data, j, j+1);
-            chart.options.data[0].dataPoints = data;
-            chart.render();
-         }
-         j++;
-         setTimeout(() => {
-            sortElements();
-         }, 0.5);
-      }
-   })();
+let sleep =  (ms) => {
+   return new Promise(resolve => setTimeout(resolve, ms));
 }
