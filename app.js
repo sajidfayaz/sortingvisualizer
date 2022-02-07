@@ -17,16 +17,16 @@ function setup() {
       states[i] = -1;
    }
 
-   const sel = document.querySelector('.selectionSort');
-   const bubb = document.querySelector('.bubbleSort');
+   const select = document.querySelector('.selectionSort');
+   const bubble = document.querySelector('.bubbleSort');
    const insert = document.querySelector('.quickSort');
-   const merg = document.querySelector('.mergeSort');
+   const merge = document.querySelector('.mergeSort');
    const quick = document.querySelector('.insertionSort');
 
-   sel.addEventListener('click', getFunctionName);
-   bubb.addEventListener('click', getFunctionName);
+   select.addEventListener('click', getFunctionName);
+   bubble.addEventListener('click', getFunctionName);
    insert.addEventListener('click', getFunctionName);
-   merg.addEventListener('click', getFunctionName);
+   merge.addEventListener('click', getFunctionName);
    quick.addEventListener('click', getFunctionName);
 
    function getFunctionName() {
