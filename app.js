@@ -19,7 +19,8 @@ function setup() {
     //bubbleSort(arr, states);
     //selectionSort(arr, states);
     //insertionSort(arr, states);
-    quickSort(arr, states, 0, arr.length-1);
+    //quickSort(arr, states, 0, arr.length-1);
+    mergeSort(arr, states, 0, arr.length-1);
 }
 
 //p5js draw() method
