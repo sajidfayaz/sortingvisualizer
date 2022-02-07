@@ -1,40 +1,59 @@
-function generateRandomColor() {
-   let letters = '0123456789ABCDEF';
-   let color = '#';
-   for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+// crete an array to store values
+let arr = [];
+
+// create states to keep track of indexes being swapped and sorted indexes
+let states = [];
+
+//p5js setup() method
+function setup() {
+   let canv = createCanvas(1000, 500);
+   console.log(canv);
+   // place canvas inside a div
+   canv.parent('canvasContainer');
+
+   arr = new Array(floor(width / 10));
+   for (let i = 0; i < arr.length - 2; i++) {
+      arr[i] = random(height) + 1;
+      states[i] = -1;
    }
-   return color;
+   //bubbleSort(arr, states);
+   //selectionSort(arr, states);
+   //insertionSort(arr, states);
+   //quickSort(arr, states, 0, arr.length-1);
+   mergeSort(arr, states, 0, arr.length - 1);
 }
 
-const arr = [];
+//p5js draw() method
+function draw() {
+   background(0);
+   for (let i = 0; i < arr.length - 2; i++) {
+      if (states[i] == 0) {
+         //fill('#E0777D');
+         fill(0, 0, 255);
+         states[i] = -1;
+      } else if (states[i] == 1) {
+         fill(0, 255, 0);
+      } else if (states[i] == 2) {
+         fill('orange');
+      } else {
+         fill(255);
+      }
 
-// Generate random numbers and push them into the array
-for (let i = 0; i < 100; i++) {
-   let randNumber = Math.floor(Math.random() * 56);
-   let randColor = generateRandomColor();
-   arr.push({
-      y: randNumber,
-      color: randColor,
-      label: randNumber,
-   });
+      rect(i * 10 + 20, height - arr[i], 10, arr[i]);
+      // stroke(255);
+      // line(i, height, i, height - arr[i]);
+   }
 }
 
-// Select chart in the DOM and set different properties
-const chart = new CanvasJS.Chart('chartContainer', {
-   animationEnabled: true,
-   theme: 'light2',
-   title: {
-      text: 'Sorting Visualizer',
-   },
-   data: [
-      {
-         type: 'column',
-         dataPoints: arr,
-      },
-   ],
-});
+// common swap function
+let swap = async (arr, a, b) => {
+   await sleep(90);
+   let temp = arr[a];
+   arr[a] = arr[b];
+   arr[b] = temp;
+};
 
-chart.render();
-
-bubbleSort(chart);
+// common sleep function to add delay in animations
+let sleep = ms => {
+   return new Promise(resolve => setTimeout(resolve, ms));
+};

@@ -4,13 +4,38 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="styles.css">
       <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
       <title>Sorting Visualizer</title>
    </head>
    <body>
-      <div id="chartContainer" style="height: 460px; width: 100%"></div>
-      <script src="bubbleSort.js"></script>
-      <script src="app.js"></script>
+      <div id="chartContainer"></div>
+      <!-- <script src="bubbleSort.js"></script> -->
+      <!-- <script src="app.js"></script> -->
    </body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- include p5js library source -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+
+    <title>Algorithm Visualization</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sorting visualizer</h1>
+        <div id="canvasContainer"></div>
+    </div>
+
+    <script src="mergeSort.js"></script>
+    <script src="quickSort.js"></script>
+    <script src="insertionSort.js"></script>
+    <script src="selectionSort.js"></script>
+    <script src="bubbleSort.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
