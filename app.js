@@ -30,15 +30,14 @@ function setup() {
    quick.addEventListener('click', getFunctionName);
 
    function getFunctionName() {
-      let funcName;
-      funcName = this.className;
+      let funcName = this.className;
       if (funcName === 'selectionSort') selectionSort(arr, states);
       else if (funcName === 'bubbleSort') bubbleSort(arr, states);
       else if (funcName === 'insertionSort') insertionSort(arr, states);
+      else if (funcName === 'mergeSort')
+         mergeSort(arr, states, 0, arr.length - 1);
       else if (funcName === 'quickSort')
          quickSort(arr, states, 0, arr.length - 1);
-      else if (funcName === 'mergesort')
-         mergeSort(arr, states, 0, arr.length - 1);
    }
 }
 
