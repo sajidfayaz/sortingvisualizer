@@ -1,9 +1,0 @@
-{
-   "name": "sorting-visualizer",
-   "version": "1.0.0",
-   "type": "module",
-   "main": "index.js",
-   "repository": "https://github.com/powrhouseofthecell/Sorting-Visualizer.git",
-   "author": "Zuhaib <theshahzuhaib96@gmail.com>",
-   "license": "MIT"
-}

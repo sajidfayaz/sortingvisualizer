@@ -1,18 +1,23 @@
-// let funcName = '';
-// function getFunctionName() {
-//    funcName = this.className;
-// }
-// const zuhaib = '12';
-// const sel = document.querySelector('.selectionSort');
-// const bubb = document.querySelector('.bubbleSort');
-// const insert = document.querySelector('.quickSort');
-// const merg = document.querySelector('.mergeSort');
-// const quick = document.querySelector('.insertionSort');
+const selectBtn = document.querySelector('.selectionSort');
+const bubbleBtn = document.querySelector('.bubbleSort');
+const insertBtn = document.querySelector('.quickSort');
+const mergeBtn = document.querySelector('.mergeSort');
+const quickBtn = document.querySelector('.insertionSort');
 
-// sel.addEventListener('click', getFunctionName);
-// bubb.addEventListener('click', getFunctionName);
-// insert.addEventListener('click', getFunctionName);
-// merg.addEventListener('click', getFunctionName);
-// quick.addEventListener('click', getFunctionName);
+selectBtn.addEventListener('click', getFunctionName);
+bubbleBtn.addEventListener('click', getFunctionName);
+insertBtn.addEventListener('click', getFunctionName);
+mergeBtn.addEventListener('click', getFunctionName);
+quickBtn.addEventListener('click', getFunctionName);
 
-// when button is clicked REPLACE clicked with its classname
+function getFunctionName() {
+   const val = this.className; // val is function name
+
+   if (
+      val === 'selectionSort' ||
+      val === 'bubbleSort' ||
+      val === 'insertionSort'
+   ) {
+      eval(this.className)(arr, states);
+   } else eval(this.className)(arr, states, 0, arr.length - 1);
+}
