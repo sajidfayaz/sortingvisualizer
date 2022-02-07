@@ -1,6 +1,8 @@
 let mergeSort = async (arr, states, l, r) => {
-    if(l>=r) 
+    if(l>=r) {
         return;
+    }
+        
     
     let mid = l+ parseInt((r-l)/2);
 
@@ -9,15 +11,22 @@ let mergeSort = async (arr, states, l, r) => {
         mergeSort(arr, states, mid+1, r)
     ]);
 
+    for(let i=l; i<=r; i++) {
+        states[i] = 2;
+    }
     // await mergeSort(arr, states, l, mid);
     // await mergeSort(arr, states, mid+1, r);
 
-    await merge(arr, l, mid, r);
+    await merge(arr, states, l, mid, r);
+
+    for(let i=l; i<=r; i++) {
+        states[i] = 1;
+    }
 }
 
-let ms = 50;
+let ms = 10;
 
-let merge = async (arr, l, mid, r) => {
+let merge = async (arr, states, l, mid, r) => {
     let size1 = mid - l + 1;
     let size2 = r - mid;
 
@@ -40,11 +49,13 @@ let merge = async (arr, l, mid, r) => {
         if (arrL[i] <= arrR[j]) {
             await sleep(ms);
             arr[k] = arrL[i];
+            states[k] = 0;
             i++;
         }
         else {
             await sleep(ms);
             arr[k] = arrR[j];
+            states[k] = 0;
             j++;
         }
         k++;
@@ -53,12 +64,14 @@ let merge = async (arr, l, mid, r) => {
     while(i<size1) {
         await sleep(ms);
         arr[k] = arrL[i];
+        states[k] = 0;
         i++; k++;
     }
 
     while(j<size2) {
         await sleep(ms);
         arr[k] = arrR[j];
+        states[k] = 0;
         j++; k++;
     }
 }
