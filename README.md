@@ -11,7 +11,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> This project is written in JavaScript using P5js library. The UI is really simple and working on this project was really fun. The website is hosted live using GitHub Pages.. you can check it out **[here](https://www.sajidfayaz.github.io/sortingvisualizer)**
+> This project is written in JavaScript using P5js library. The UI is really simple and working on this project was really fun. The website is hosted live using GitHub Pages.. you can check it out **[here](https://sajidfayaz.github.io/sortingvisualizer)**
 
 ## Usage
 
