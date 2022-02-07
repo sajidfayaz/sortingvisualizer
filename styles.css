@@ -1,0 +1,13 @@
+body {
+	text-align: center;
+	background-color: grey;
+}
+#chartContainer {
+	/*height: 460px; */
+	width: 100%;
+}
+
+#canvasContainer {
+	text-align: center;
+	height: 0;
+}

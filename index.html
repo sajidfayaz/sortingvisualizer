@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      <title>Sorting Visualizer</title>
+   </head>
+   <body>
+       <nav class="nav" >
+           <button class="selectionSort" >Selection Sort</button>
+           <button class="bubbleSort" >Bubble Sort</button>
+           <button class="quickSort" >Quick Sort</button>
+           <button class="mergeSort" >Merg Sort</button>
+           <button class="insertionSort" >Insertion Sort</button>
+       </nav>
+      <div id="chartContainer"></div>
+      <!-- <script src="bubbleSort.js"></script> -->
+      <!-- <script src="app.js"></script> -->
+   </body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +35,15 @@
 
     <div class="container">
         <h1>Sorting visualizer</h1>
-        <div id="canvasContainer" style="text-align:center;"></div>
+        <div id="canvasContainer"></div>
     </div>
-    
-    
-    <script src="mergeSort.js"></script>
-    <script src="quickSort.js"></script>
-    <script src="insertionSort.js"></script>
-    <script src="selectionSort.js"></script>
-    <script src="bubbleSort.js"></script>
+
+    <script src="functions/mergeSort.js"></script>
+    <script src="functions/quickSort.js"></script>
+    <script src="functions/insertionSort.js"></script>
+    <script src="functions/selectionSort.js"></script>
+    <script src="functions/bubbleSort.js"></script>
+    <script src="events.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
