@@ -16,11 +16,30 @@ function setup() {
       arr[i] = random(height) + 1;
       states[i] = -1;
    }
-   //bubbleSort(arr, states);
-   //selectionSort(arr, states);
-   //insertionSort(arr, states);
-   //quickSort(arr, states, 0, arr.length-1);
-   mergeSort(arr, states, 0, arr.length - 1);
+
+   const sel = document.querySelector('.selectionSort');
+   const bubb = document.querySelector('.bubbleSort');
+   const insert = document.querySelector('.quickSort');
+   const merg = document.querySelector('.mergeSort');
+   const quick = document.querySelector('.insertionSort');
+
+   sel.addEventListener('click', getFunctionName);
+   bubb.addEventListener('click', getFunctionName);
+   insert.addEventListener('click', getFunctionName);
+   merg.addEventListener('click', getFunctionName);
+   quick.addEventListener('click', getFunctionName);
+
+   function getFunctionName() {
+      let funcName;
+      funcName = this.className;
+      if (funcName === 'selectionSort') selectionSort(arr, states);
+      else if (funcName === 'bubbleSort') bubbleSort(arr, states);
+      else if (funcName === 'insertionSort') insertionSort(arr, states);
+      else if (funcName === 'quickSort')
+         quickSort(arr, states, 0, arr.length - 1);
+      else if (funcName === 'mergesort')
+         mergeSort(arr, states, 0, arr.length - 1);
+   }
 }
 
 //p5js draw() method
