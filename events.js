@@ -11,13 +11,17 @@ mergeBtn.addEventListener('click', getFunctionName);
 quickBtn.addEventListener('click', getFunctionName);
 
 function getFunctionName() {
-   const val = this.className; // val is function name
+   const val = this.className; // val is the name of sorting algorithm selected
 
-   if (
-      val === 'selectionSort' ||
-      val === 'bubbleSort' ||
-      val === 'insertionSort'
-   ) {
-      eval(this.className)(arr, states);
-   } else eval(this.className)(arr, states, 0, arr.length - 1);
+   if(val == "selectionSort") {
+      selectionSort(arr, states);
+   } else if(val == "bubbleSort") {
+      bubbleSort(arr, states);
+   } else if(val == "insertionSort") {
+      insertionSort(arr, states);
+   } else if(val == mergeSort) {
+      mergeSort(arr, states, 0, arr.length - 1);
+   } else {
+      quickSort(arr, states, 0, arr.length - 1);
+   }
 }
