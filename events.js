@@ -3,6 +3,7 @@ const bubbleBtn = document.querySelector('.bubbleSort');
 const insertBtn = document.querySelector('.quickSort');
 const mergeBtn = document.querySelector('.mergeSort');
 const quickBtn = document.querySelector('.insertionSort');
+
 const generateNewArr = document.querySelector('.generateNewArray');
 
 selectBtn.addEventListener('click', getFunctionName);
@@ -15,6 +16,8 @@ quickBtn.addEventListener('click', getFunctionName);
 generateNewArr.addEventListener('click', () => {
    setup();
 });
+
+
 
 
 function getFunctionName() {
