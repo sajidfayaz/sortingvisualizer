@@ -2,12 +2,10 @@ body {
 	text-align: center;
 	background-color: grey;
 }
-#chartContainer {
-	/*height: 460px; */
-	width: 100%;
-}
 
 #canvasContainer {
+	margin-top: 20px;
+	width: 100%;
 	text-align: center;
 	height: 0;
 }
