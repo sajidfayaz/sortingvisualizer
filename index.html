@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      
+      <!-- include p5js library source -->
+      <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+
+      <title>Sorting Visualizer</title>
+   </head>
+   <body>
+       <nav class="nav" >
+        <button class="generateNewArray">Generate New Array</button>
+
+            <button class="insertionSort" >Insertion Sort</button>
+            <button class="selectionSort" >Selection Sort</button>
+            <button class="bubbleSort" >Bubble Sort</button>
+            <button class="quickSort" >Quick Sort</button>
+            <button class="mergeSort" >Merge Sort</button>
+       </nav>
+      <div id="canvasContainer"></div>
+
+
+        <script src="functions/mergeSort.js"></script>
+        <script src="functions/quickSort.js"></script>
+        <script src="functions/insertionSort.js"></script>
+        <script src="functions/selectionSort.js"></script>
+        <script src="functions/bubbleSort.js"></script>
+        <script src="events.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
