@@ -22,24 +22,47 @@ navItems.forEach((item) => {
          item.classList.add("focus:text-red-500");
          selectedSort = item.childNodes[1].innerText;
          console.log(item.childNodes[1].innerText);
+         console.log(item);
       }
    });
 });
 
 // When Sort button is clicked, run the selected sorting algorithm and disable all the buttons
-sortArray.addEventListener("click", () => {
+sortArray.addEventListener("click", async () => {
    if(selectedSort === undefined) {
       alert("Please select a sorting algorithm");
    } else if (selectedSort.toLowerCase() === "bubble sort") {
-      bubbleSort(arr, states);
+      lockAllButtons();
+      await bubbleSort(arr, states);
+      releaseLock();
       console.log("hurray");
    } else if(selectedSort.toLowerCase() === "selection sort") {
-      selectionSort(arr, states);
+      lockAllButtons();
+      await selectionSort(arr, states);
+      releaseLock();
    } else if(selectedSort.toLowerCase() === "insertion sort") {
-      insertionSort(arr, states);
+      lockAllButtons();
+      await insertionSort(arr, states);
+      releaseLock();
    } else if(selectedSort.toLowerCase() === "merge sort") {
-      mergeSort(arr, states, 0, arr.length - 1);
+      lockAllButtons();
+      await mergeSort(arr, states, 0, arr.length - 1);
+      releaseLock();
    } else if(selectedSort.toLowerCase() === "quick sort") {
-      quickSort(arr, states, 0, arr.length - 1);
+      lockAllButtons();
+      await quickSort(arr, states, 0, arr.length - 1);
+      releaseLock();
    }
 });
+
+let lockAllButtons = () =>  {
+   navItems.forEach((item) => {
+      item.disabled = true;
+   });
+}
+
+let releaseLock = () => {
+   navItems.forEach((item) => {
+      item.disabled = false;
+   });
+}
