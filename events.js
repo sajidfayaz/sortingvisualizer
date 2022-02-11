@@ -18,11 +18,11 @@ let selectedSort;
 // Highlight the selected sorting algorithm and save it in selectedSort
 navItems.forEach((item) => {
    item.addEventListener("click", () => {
-      if(item.tagName === "A") {
+      if(item.tagName === "A" && !item.disabled) {
          item.classList.add("focus:text-red-500");
          selectedSort = item.childNodes[1].innerText;
          console.log(item.childNodes[1].innerText);
-         console.log(item);
+         console.log(item.classList);
       }
    });
 });
@@ -55,12 +55,14 @@ sortArray.addEventListener("click", async () => {
    }
 });
 
+// lock all buttons
 let lockAllButtons = () =>  {
    navItems.forEach((item) => {
       item.disabled = true;
    });
 }
 
+// release lock on all buttons
 let releaseLock = () => {
    navItems.forEach((item) => {
       item.disabled = false;
