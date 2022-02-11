@@ -1,37 +1,45 @@
-const selectBtn = document.querySelector('.selectionSort');
-const bubbleBtn = document.querySelector('.bubbleSort');
-const insertBtn = document.querySelector('.quickSort');
-const mergeBtn = document.querySelector('.mergeSort');
-const quickBtn = document.querySelector('.insertionSort');
+// Hold all the buttons that are in the navbar inside this variable
+const navItems = document.querySelector("#navItems").childNodes;
 
-const generateNewArr = document.querySelector('.generateNewArray');
+// Select the Sort button
+const sortArray = document.querySelector("#sortArray");
 
-selectBtn.addEventListener('click', getFunctionName);
-bubbleBtn.addEventListener('click', getFunctionName);
-insertBtn.addEventListener('click', getFunctionName);
-mergeBtn.addEventListener('click', getFunctionName);
-quickBtn.addEventListener('click', getFunctionName);
+// Select the button which will generate a new array on click
+const generateNewArr = document.querySelector('#generateNewArray');
 
 // Generate New Array on click
 generateNewArr.addEventListener('click', () => {
    setup();
 });
 
+// This will hold the sorting algorithm which was selected
+let selectedSort;
 
+// Highlight the selected sorting algorithm and save it in selectedSort
+navItems.forEach((item) => {
+   item.addEventListener("click", () => {
+      if(item.tagName === "A") {
+         item.classList.add("focus:text-red-500");
+         selectedSort = item.childNodes[1].innerText;
+         console.log(item.childNodes[1].innerText);
+      }
+   });
+});
 
-
-function getFunctionName() {
-   const val = this.className; // val is the name of sorting algorithm selected
-
-   if(val == "selectionSort") {
-      selectionSort(arr, states);
-   } else if(val == "bubbleSort") {
+// When Sort button is clicked, run the selected sorting algorithm and disable all the buttons
+sortArray.addEventListener("click", () => {
+   if(selectedSort === undefined) {
+      alert("Please select a sorting algorithm");
+   } else if (selectedSort.toLowerCase() === "bubble sort") {
       bubbleSort(arr, states);
-   } else if(val == "insertionSort") {
+      console.log("hurray");
+   } else if(selectedSort.toLowerCase() === "selection sort") {
+      selectionSort(arr, states);
+   } else if(selectedSort.toLowerCase() === "insertion sort") {
       insertionSort(arr, states);
-   } else if(val == "mergeSort") {
+   } else if(selectedSort.toLowerCase() === "merge sort") {
       mergeSort(arr, states, 0, arr.length - 1);
-   } else {
+   } else if(selectedSort.toLowerCase() === "quick sort") {
       quickSort(arr, states, 0, arr.length - 1);
    }
-}
+});
