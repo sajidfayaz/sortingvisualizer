@@ -6,21 +6,72 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" type="text/css" href="styles.css">
       
+      <!-- material icons cdn -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
       <!-- include p5js library source -->
       <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+
+      <!-- include tailwindcss stylesheet -->
+      <link rel="stylesheet" href="public/styles.css">
 
       <title>Sorting Visualizer</title>
    </head>
    <body>
-       <nav class="nav" >
-        <button class="generateNewArray">Generate New Array</button>
 
-            <button class="insertionSort" >Insertion Sort</button>
-            <button class="selectionSort" >Selection Sort</button>
-            <button class="bubbleSort" >Bubble Sort</button>
-            <button class="quickSort" >Quick Sort</button>
-            <button class="mergeSort" >Merge Sort</button>
-       </nav>
+    <!-- Navbar -->
+    <nav class="flex items-center bg-gray-800 p-7 flex-wrap">
+        <a href="#" class="p-2 mr-4 inline-flex items-center">
+            <span class="material-icons fill-current text-green-400 w-8 mr-1">leaderboard</span>
+            <span class="text-xl text-white font-bold uppercase tracking-wide">
+                Sorting Visualizer
+            </span>
+        </a>
+        
+
+        <button class="text-white inline-flex p-3 hover:text-blue-500 rounded lg:hidden">
+            <i class="material-icons">reorder</i>
+        </button>
+
+        <div class="top-nav w-full lg:inline-flex lg:flex-grow lg:w-auto">
+            <div class="lg:inline-flex lg:flex-row lg:ml-auto">
+                <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900" >
+                    <span>Bubble Sort</span>
+                </a>
+
+                <span class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-red-500 md:hidden sm:hidden">|</span>
+                
+                <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900" >
+                    <span>Selection Sort</span>
+                
+                </a>
+                <span class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-red-500 md:hidden sm:hidden">|</span>
+
+                <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900" >
+                    <span>Insertion Sort</span>
+                </a>
+                
+                <span class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-red-500 md:hidden sm:hidden">|</span>
+                
+                <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900" >
+                    <span>Merge Sort</span>
+                </a>
+
+                <span class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-red-500 md:hidden sm:hidden">|</span>
+
+                <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900" >
+                    <span>Quick Sort</span>
+                </a>
+                
+                <span class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-yellow-300 md:hidden sm:hidden">-></span>
+
+                <button class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-blue-500">Sort</button>
+
+            </div>
+        </div>
+    </nav>
+    
       <div id="canvasContainer"></div>
 
 
