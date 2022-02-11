@@ -23,7 +23,7 @@ let mergeSort = async (arr, states, l, r) => {
    }
 };
 
-let ms = 10;
+let ms = 90;
 
 let merge = async (arr, states, l, mid, r) => {
    let size1 = mid - l + 1;

@@ -9,7 +9,7 @@ let insertionSort = async (arr, states) => {
          // states[j+1] = 0;
          j -= 1;
       }
-      await sleep(100);
+      await sleep(90);
       arr[j+1] = key;
       states[j+1] = 0;
       if (i == arr.length - 1) {
