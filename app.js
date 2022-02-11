@@ -20,7 +20,7 @@ function setup() {
 
 //p5js draw() method
 function draw() {
-   background(0);
+   background(92, 90, 86);
    for (let i = 0; i < arr.length - 2; i++) {
       if (states[i] == 0) {
          //fill('#E0777D');
